@@ -1,0 +1,41 @@
+<div class="container">
+  <a href='/'>Back</a>
+</div>
+<div class="container mt-5">
+  <form action="{{link}}" method="GET">
+    <div class="form-group">
+      <label for="formGroupExampleInput">{{question}}</label>
+      <input type="text" name="value" class="form-control" id="formGroupExampleInput" placeholder="{{placeholder}}">
+    </div>
+    <button type="submit" class="btn btn-primary">Create playlist</button>
+  </form>
+</div>
+{{#if errorMessage}}
+<div class="container mt-5">
+  <div class="alert alert-danger" role="alert">{{errorMessage}}</div>
+</div>
+{{/if}}
+{{#if collection.length}}
+<div class="container mt-5">
+  <table class="table">
+    <thead class="thead-light">
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Artist</th>
+        <th scope="col">Name</th>
+        <th scope="col">Duration</th>
+      </tr>
+    </thead>
+    <tbody>
+      {{#collection}}
+      <tr>
+        <th scope="row">{{id}}</th>
+        <td>{{artist}}</td>
+        <td>{{name}}</td>
+        <td>{{duration}}</td>
+      </tr>
+      {{/collection}}
+    </tbody>
+  </table>
+</div>
+{{/if}}

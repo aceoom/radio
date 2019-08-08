@@ -1,0 +1,14 @@
+{
+  "extends": "standard",
+  "env": {
+    "node": true
+  },
+  "overrides": [
+    {
+      "files": ["bin/*.js", "routes/*.js"],
+      "rules": {
+        "quotes": ["error", "single"]
+      }
+    }
+  ]
+}
